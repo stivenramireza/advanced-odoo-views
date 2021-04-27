@@ -15,7 +15,7 @@
 
         <!-- Action to open models views-->
         <record model="ir.actions.act_window" id="odoo_view_advanced_custom_item">
-            <field name="name">Producto</field>
+            <field name="name">Product</field>
             <field name="res_model">odoo_view_advanced.custom_item</field>
             <field name="view_mode">tree,form</field>
         </record>
