@@ -20,6 +20,31 @@
             <field name="view_mode">tree,form</field>
         </record>
         
+        <record id="wizard_import_file_view" model="ir.ui.view">
+            <field name="name">Import file</field>
+            <field name="model">odoo_view_advanced.upload_file</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <group>
+                        <field name="upload_file" filename="file_name" />
+                        <field name="file_name" invisible="1" />
+                    </group>
+                    <footer>
+                        <button name="import_file" string="Import file" class="oe_right oe_highlight" type="object" />
+                        <button special="cancel" string="Cancel" class="oe_right" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="odoo_view_advanced_file_import_wizard">
+            <field name="name">Import file</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">odoo_view_advanced.upload_file</field>
+            <field name="view_id" ref="wizard_import_file_view" />
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
 
         <!-- Higher menu item  -->
         <menuitem name="Advanced views" id="odoo_view_advanced.menu_root"/>
@@ -30,6 +55,9 @@
         <!-- Menu actions -->
         <menuitem name="Product" id="odoo_view_advanced.menu_product" parent="odoo_view_advanced.menu_1"
                   action="odoo_view_advanced_custom_item"/>
+
+        <menuitem name="Import file" id="odoo_view_advanced.menu_import_file" parent="odoo_view_advanced.menu_1"
+                  action="odoo_view_advanced_file_import_wizard"/>
 
     </data>
 </odoo>
