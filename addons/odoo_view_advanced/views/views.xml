@@ -6,7 +6,7 @@
             <field name="name">view.odoo.view.advanced.custom.item.tree</field>
             <field name="model">odoo_view_advanced.custom_item</field>
             <field name="arch" type="xml">
-                <tree string="Producto">
+                <tree string="Product">
                     <field name="name"/>
                     <field name="unit_price"/>
                 </tree>
@@ -22,13 +22,13 @@
         
 
         <!-- Higher menu item  -->
-        <menuitem name="Vistas avanzado" id="odoo_view_advanced.menu_root"/>
+        <menuitem name="Advanced views" id="odoo_view_advanced.menu_root"/>
 
         <!-- Menu categories -->
-        <menuitem name="Vistas" id="odoo_view_advanced.menu_1" parent="odoo_view_advanced.menu_root"/>
+        <menuitem name="Views" id="odoo_view_advanced.menu_1" parent="odoo_view_advanced.menu_root"/>
 
         <!-- Menu actions -->
-        <menuitem name="Producto" id="odoo_view_advanced.menu_product" parent="odoo_view_advanced.menu_1"
+        <menuitem name="Product" id="odoo_view_advanced.menu_product" parent="odoo_view_advanced.menu_1"
                   action="odoo_view_advanced_custom_item"/>
 
     </data>
