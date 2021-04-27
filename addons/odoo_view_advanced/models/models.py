@@ -19,6 +19,19 @@ class CustomItem(models.Model):
         return True
 
 
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+
+    def get_items(self):
+        self.ensure_one()
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Products',
+            'view_mode': 'tree,form',
+            'res_model': 'odoo_view_advanced.custom_item'
+        }
+
+
 class UploadFile(models.TransientModel):
     _name = 'odoo_view_advanced.upload_file'
     _description = 'Model to upload files'
