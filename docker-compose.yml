@@ -12,6 +12,7 @@ services:
             - ./data/odoo:/var/lib/odoo
             - ./config:/etc/odoo
             - ./addons:/mnt/extra-addons
+            - ./enterprise:/mnt/enterprise
         environment:
             - HOST=odoo_db
             - USER=odoo
