@@ -52,7 +52,9 @@
             <field name="inherit_id" ref="base.res_partner_kanban_view" />
             <field name="arch" type="xml">
                 <xpath expr="//div[@class='oe_kanban_details d-flex flex-column']/ul/li[last()]" position="after">
-                    <li><field name="phone" /></li>
+                    <li class="text-danger font-weight-bold">
+                        <field name="phone" />
+                    </li>
                 </xpath>
             </field>
         </record>

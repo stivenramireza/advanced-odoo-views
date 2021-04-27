@@ -31,15 +31,9 @@ class UploadFile(models.TransientModel):
             if '.csv' not in self.file_name:
                 raise exceptions.ValidationError('File must be a CSV')
             file = self.read_file_from_binary(self.upload_file)
-            logger.info('****************************** INFO ******************************')
-            logger.info(file)
-            logger.info('****************************** INFO ******************************')
             lines = file.split('\n')
             for line in lines:
                 elements = line.split(';')
-                # logger.info('****************************** INFO ******************************')
-                # logger.info(elements)
-                # logger.info('****************************** INFO ******************************')
                 if len(elements) > 1:
                     self.env['odoo_view_advanced.custom_item'].create({
                         'name': elements[0],
