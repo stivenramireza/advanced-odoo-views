@@ -1,3 +1,4 @@
 [submodule "enterprise"]
 	path = enterprise
 	url = https://github.com/Superfuds/odoo-ee.git
+	branch = 14.0
