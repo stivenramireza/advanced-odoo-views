@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+
+        <!-- Tree view -->
+        <record id="view_odoo_view_advanced_custom_item_tree" model="ir.ui.view">
+            <field name="name">view.odoo.view.advanced.custom.item.tree</field>
+            <field name="model">odoo_view_advanced.custom_item</field>
+            <field name="arch" type="xml">
+                <tree string="Producto">
+                    <field name="name"/>
+                    <field name="unit_price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open models views-->
+        <record model="ir.actions.act_window" id="odoo_view_advanced_custom_item">
+            <field name="name">Producto</field>
+            <field name="res_model">odoo_view_advanced.custom_item</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+
+        <!-- Higher menu item  -->
+        <menuitem name="Vistas avanzado" id="odoo_view_advanced.menu_root"/>
+
+        <!-- Menu categories -->
+        <menuitem name="Vistas" id="odoo_view_advanced.menu_1" parent="odoo_view_advanced.menu_root"/>
+
+        <!-- Menu actions -->
+        <menuitem name="Producto" id="odoo_view_advanced.menu_product" parent="odoo_view_advanced.menu_1"
+                  action="odoo_view_advanced_custom_item"/>
+
+    </data>
+</odoo>
