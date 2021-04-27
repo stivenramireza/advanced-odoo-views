@@ -14,6 +14,10 @@ class CustomItem(models.Model):
     name = fields.Char(string='Description')
     unit_price = fields.Char(string='Unit price')
 
+    def remove_items(self, user):
+        logger.info('Deleting items')
+        return True
+
 
 class UploadFile(models.TransientModel):
     _name = 'odoo_view_advanced.upload_file'
