@@ -70,11 +70,17 @@
         <record model="ir.actions.act_window" id="odoo_view_advanced_custom_item">
             <field name="name">Product</field>
             <field name="res_model">odoo_view_advanced.custom_item</field>
-            <field name="view_mode">tree,form,graph,calendar</field>
+            <field name="view_mode">tree,form,graph</field>
             <!-- <field name="context">{'default_type': 'S'}</field> -->
             <!-- <field name="context">{'group_by': 'type'}</field> -->
             <!-- <field name="context">{'create': False}</field> -->
             <!-- <field name="domain">[('type', '=', 'S')]</field> -->
+        </record>
+
+        <record model="ir.actions.act_window" id="odoo_view_advanced_custom_task">
+            <field name="name">Task</field>
+            <field name="res_model">odoo_view_advanced.task</field>
+            <field name="view_mode">tree,form,calendar</field>
         </record>
         
         <record id="wizard_import_file_view" model="ir.ui.view">
@@ -177,6 +183,9 @@
 
         <menuitem name="Order" id="odoo_view_advanced.menu_order" parent="odoo_view_advanced.menu_1"
                   action="odoo_view_advanced_custom_sales_order"/>
+
+        <menuitem name="Task" id="odoo_view_advanced.menu_task" parent="odoo_view_advanced.menu_1"
+                  action="odoo_view_advanced_custom_task"/>
 
     </data>
 </odoo>
