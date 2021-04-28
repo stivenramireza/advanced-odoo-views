@@ -40,6 +40,7 @@ class ResPartner(models.Model):
 
 class CustomSalesOrder(models.Model):
     _name = 'odoo_view_advanced.order'
+    _description = 'Model to manage sales orders'
 
     name = fields.Char(string='Order number')
     state = fields.Selection([('B', 'Trash'), ('C', 'Confirmed')], default='B')
@@ -84,6 +85,7 @@ class UploadFile(models.TransientModel):
 
 class CustomTask(models.Model):
     _name = 'odoo_view_advanced.task'
+    _description = 'Model to manage tasks'
 
     name = fields.Char(string='Description')
     start_date = fields.Date(string='Start date')
