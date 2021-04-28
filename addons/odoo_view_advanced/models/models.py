@@ -80,3 +80,11 @@ class UploadFile(models.TransientModel):
         except Exception as e:
             logger.error(f'Error to read file from binary: {e}')
             raise
+
+
+class CustomTask(models.Model):
+    _name = 'odoo_view_advanced.task'
+
+    name = fields.Char(string='Description')
+    start_date = fields.Date(string='Start date')
+    end_date = fields.Date(string='End date')
