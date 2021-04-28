@@ -88,3 +88,8 @@ class CustomTask(models.Model):
     name = fields.Char(string='Description')
     start_date = fields.Date(string='Start date')
     end_date = fields.Date(string='End date')
+    done = fields.Boolean(string='Done')
+
+    def toggle_state(self):
+        self.done = not self.done
+        return True

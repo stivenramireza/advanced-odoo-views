@@ -14,6 +14,7 @@
             </field>
         </record>
 
+        <!-- Graph view -->
         <record id="view_item_graph" model="ir.ui.view">
             <field name="name">view.item.graph</field>
             <field name="model">odoo_view_advanced.custom_item</field>
@@ -41,6 +42,44 @@
                                 <field name="unit_price"/>
                                 <field name="type"/>
                             </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Task form view -->
+        <record id="view_task_form" model="ir.ui.view">
+            <field name="name">view.task.form</field>
+            <field name="model">odoo_view_advanced.task</field>
+            <field name="arch" type="xml">
+                <form string="task">
+                    <header>
+                        <button name="toggle_state" type="object" class="oe_stat_button"
+                                string="Change to done" icon="fa-play-circle"
+                        />
+                    </header>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="name" />
+                            </group>
+                            <group name="group_right" col="4">
+                                <field name="start_date" />
+                                <field name="end_date" />
+                                <field name="done" />
+                            </group>
+                        </group>
+                        <separator string="Separator" />
+                        <group>
+                            <notebook>
+                                <page string="Page 1">
+                                    
+                                </page>
+                                <page string="Page 2">
+                                    
+                                </page>
+                            </notebook>
                         </group>
                     </sheet>
                 </form>
