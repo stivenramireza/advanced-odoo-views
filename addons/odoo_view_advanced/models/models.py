@@ -11,8 +11,14 @@ class CustomItem(models.Model):
     _name = 'odoo_view_advanced.custom_item'
     _description = 'Model to manage custom items'
 
+    sale_id = fields.Integer()
     name = fields.Char(string='Description')
     unit_price = fields.Char(string='Unit price')
+    sequence = fields.Integer()
+    type = fields.Selection([('A', 'Food'), ('S', 'Service')], string='Type')
+    customer = fields.Many2one('res.partner', string='Customer')
+    category = fields.Char(string='Category')
+    stock = fields.Integer(string='Stock')
 
     def remove_items(self, user):
         logger.info('Deleting items')
@@ -30,6 +36,15 @@ class ResPartner(models.Model):
             'view_mode': 'tree,form',
             'res_model': 'odoo_view_advanced.custom_item'
         }
+
+
+class CustomSalesOrder(models.Model):
+    _name = 'odoo_view_advanced.order'
+
+    name = fields.Char(string='Order number')
+    state = fields.Selection([('B', 'Trash'), ('C', 'Confirmed')], default='B')
+
+    lines = fields.One2many('odoo_view_advanced.custom_item', 'sale_id', string='Lines')
 
 
 class UploadFile(models.TransientModel):
